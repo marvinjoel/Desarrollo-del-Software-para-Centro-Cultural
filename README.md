@@ -1,68 +1,44 @@
 # Cotización y Plan de Desarrollo del Software para Centro Cultural
 
 ## Visión General
-El objetivo es desarrollar un sistema de gestión integral para un centro cultural que incluye módulos para talleres, teatro, cine y alquileres. El software automatizará el registro de alumnos/clientes, la gestión de detalles de pagos y generará reportes analíticos, reemplazando el uso actual de Excel y formularios de Facebook. Se utilizará Java spring boot o Python con FastAPI como BackEnd y en diseño para la web se trabajara con React como FrontEnd, con integración de una API de RENIEC para validación de datos personales. El proyecto se completará en 3 meses, con un enfoque inicial en un MVP que se expandirá según necesidades.
+El objetivo es desarrollar un sistema de gestión integral para un centro cultural que incluye módulos para talleres, teatro, cine y alquileres. El software automatizará el registro de alumnos/clientes, la gestión de pagos y generará reportes analíticos, reemplazando el uso actual de Excel y formularios de Facebook. Se utilizará Java, con integración de una API de RENIEC para validación de datos personales. El proyecto se completará en 3 meses, con un enfoque inicial en un MVP que se expandirá según necesidades.
 
 **Notas Importantes:**
 - El costo del hosting, dominio y la API de RENIEC no está incluido en esta cotización. Estos son gastos que el cliente debe asumir directamente. Detalles a continuación.
 
 ## Plazo y Cotización
-- **Duración Estimada**: 3 meses (a partir del "la fecha acordada").
-- **Horas Estimadas**: 240-300 horas (80-100 horas/mes, asumiendo 20-25 horas semanales).
-- **Costo Total**: .....).
-  - **Mes 1**: $0-$0 USD (Fase 1: Configuración y desarrollo inicial).
-  - **Mes 2**: $0-$0 USD (Fase 2: Despliegue e integración).
-  - **Mes 3**: $0-$0 USD (Fase 3: Pruebas, optimización y documentación).
-- **Pagos**: 50% al inicio, 30% a mitad del proyecto, 20% al finalizar (sujeto a acuerdo).
+- **Duración Estimada**: 3 meses.
+- **Horas Estimadas**: 300 horas (100 horas/mes).
+- **Costo Total**: $1,800 USD.
+  - **Inicial**: $900 (50% al inicio del proyecto).
+  - **Intermedio**: $540 (30% a mitad del proyecto).
+  - **Final**: $360 (20% al finalizar el proyecto).
+- **Pagos**: Según los hitos indicados (sujeto a acuerdo).
 
 ## Tareas a Realizar en el Software
-### Fase 1: Fundación y Configuración (Mes 1)
-- **Tarea 1.1: Configuración del Entorno de Desarrollo Local**
-  - Elegir y configurar un stack con Java sping boot o Python y FastAPI.
-  - Instalar PostgreSQL localmente para desarrollo y pruebas.
-  - Estructurar el proyecto con separación de rutas, controladores y servicios.
-- **Tarea 1.2: Integración con API de RENIEC**
-  - Investigar y configurar la API de RENIEC para validar datos personales de alumnos/clientes.
-  - Crear un script de prueba para conectar y obtener datos básicos (ej. nombres y DNI).
-  - Entregable: Confirmación de conexión exitosa con la API de RENIEC.
-- **Tarea 1.3: Desarrollo del Endpoint de Registro de Alumnos (POST /inscribir-alumno)**
-  - Crear ruta y controlador para registrar alumnos via formulario en línea.
-  - Implementar lógica para validar datos con la API de RENIEC y guardar en PostgreSQL.
-  - Entregable: Endpoint funcional que registra alumnos con datos validados.
-- **Tarea 1.4: Desarrollo del Endpoint de Registro de Pagos (POST /registrar-pago)**
-  - Crear ruta y controlador para registrar pagos (matrícula, mensualidades, entradas).
-  - Validar datos y actualizar estado (pagado, pendiente, deuda).
-  - Entregable: Endpoint funcional que gestiona pagos y muestra deudas.
+### Fase 1: Desarrollo Inicial (Mes 1)
+- Configurar un sistema robusto para registrar alumnos en talleres, validando sus datos personales mediante la API de RENIEC.
+- Implementar un módulo para registrar y gestionar pagos de matrícula y mensualidades, con actualización automática de deudas pendientes.
+- Crear un sistema de inscripción en línea donde los alumnos completen formularios y sus datos se integren directamente al software.
+- Entregable: Un módulo funcional para inscripción y gestión de pagos de talleres.
 
-### Fase 2: Despliegue e Integración (Mes 2)
-- **Tarea 2.1: Dockerizar la API**
-  - Crear un Dockerfile para la aplicación.
-  - Configurar un archivo docker-compose.yml para orquestar servicios.
-  - Entregable: Dockerfile y docker-compose.yml listos para despliegue.
-- **Tarea 2.2: Despliegue Inicial en el VPS**
-  - Conectar al VPS proporcionado por el cliente.
-  - Levantar contenedores con docker-compose up -d.
-  - Entregable: API corriendo en el VPS.
-- **Tarea 2.3: Configuración de Nginx como Reverse Proxy**
-  - Instalar Nginx y configurar subdominios (ej. talleres.dominio.com).
-  - Redirigir tráfico al puerto interno de la API.
-  - Entregable: Servicios accesibles via subdominios.
-- **Tarea 2.4: Implementación de SSL/TLS**
-  - Usar Certbot para obtener certificados SSL de Let's Encrypt.
-  - Configurar renovación automática.
-  - Entregable: Conexiones seguras (HTTPS).
+### Fase 2: Expansión y Lanzamiento (Mes 2)
+- Ampliar el sistema para incluir registro de clientes y ventas de entradas para teatro y cine, con gestión de pagos asociada.
+- Lanzar el software en un entorno de producción accesible para su uso, asegurando una experiencia segura y fluida.
+- Configurar un sistema de formularios en línea para compras de entradas, integrando los datos automáticamente.
+- Entregable: Módulos completos para teatro, cine y un sistema en producción listo para uso.
 
-### Fase 3: Pruebas y Soporte (Mes 3)
-- **Tarea 3.1: Colaboración en Pruebas End-to-End**
-  - Monitorear logs mientras se prueban flujos con formularios y pagos.
-  - Solucionar bugs y optimizar errores detectados.
-- **Tarea 3.2: Optimización y Monitoreo**
-  - Verificar rendimiento (CPU, memoria) y optimizar consultas si es necesario.
-  - Asegurar que el sistema funcione como esperado.
-- **Tarea 3.3: Documentación de la API**
-  - Crear documentación con Swagger/OpenAPI o un README.md.
-  - Detallar endpoints, parámetros y estructura de datos devueltos.
-  - Entregable: Documentación técnica completa.
+### Fase 3: Optimización y Reportes (Mes 3)
+- Realizar pruebas finales con el cliente para asegurar que todo funcione correctamente y resolver cualquier problema.
+- Optimizar el rendimiento del sistema y monitorear su uso para garantizar una experiencia eficiente.
+- Desarrollar reportes detallados de ingresos y análisis por período, con filtros por módulos (talleres, teatro, cine).
+- Crear una documentación clara para que el cliente pueda usar y mantener el software fácilmente.
+- Entregable: Sistema optimizado, reportes funcionales y documentación completa.
+
+## Reportes e Indicadores
+- El software incluirá reportes de ingresos filtrables por día, mes o año, con prioridad en análisis mensual.
+- Se podrán generar filtros específicos por módulo (talleres, teatro, cine) para evaluar el rendimiento de cada actividad.
+- Los reportes ofrecerán estadísticas analíticas, como totales de ingresos y tendencias, para apoyar la toma de decisiones.
 
 ## Costos Adicionales a Cargo del Cliente
 ### Hosting y Dominio
